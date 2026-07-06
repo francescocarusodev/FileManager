@@ -4,17 +4,6 @@ import java.io.*;
 public class FileManager {
 
     public  static void scriviSuFile(String pathFile, String contenuto) {
-        File file = new File(pathFile);
-        if (!file.exists()) {
-            try {
-                file.createNewFile();
-                System.out.println("Il file non esiste, l'ho appena creato!");
-            } catch (IOException ex) {
-                System.out.println("Errore : " + ex);
-            }
-
-        }
-
         try (
                 BufferedWriter bw = new BufferedWriter(new FileWriter(pathFile))
         ) {
