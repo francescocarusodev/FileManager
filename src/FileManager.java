@@ -3,7 +3,7 @@ import java.io.*;
 
 public class FileManager {
 
-    public void scriviSuFile(String pathFile, String contenuto) {
+    public  static void scriviSuFile(String pathFile, String contenuto) {
         File file = new File(pathFile);
         if (!file.exists()) {
             try {
@@ -28,7 +28,7 @@ public class FileManager {
 
 
 
-    public void leggiDaFile(String pathFile) {
+    public static void leggiDaFile(String pathFile) {
         File file = new File(pathFile);
         if (file.exists()) {
             try (BufferedReader br = new BufferedReader(new FileReader(pathFile))) {
@@ -48,7 +48,7 @@ public class FileManager {
 
 
 
-    public void copiaFile(String sorgente, String destinazione) {
+    public static void copiaFile(String sorgente, String destinazione) {
         File fileSorgente = new File(sorgente);
         File fileDestinazione = new File(destinazione);
         if (fileDestinazione.exists() & fileSorgente.exists()) {
@@ -72,7 +72,7 @@ public class FileManager {
 
 
 
-    public void eliminaFile(String pathFile) {
+    public static void eliminaFile(String pathFile) {
         File file = new File(pathFile);
         if (file.exists()) {
             if (file.delete()) {
