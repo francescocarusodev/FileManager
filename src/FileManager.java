@@ -36,7 +36,7 @@ public class FileManager {
     }
 
 
-
+    @SuppressWarnings("IOStreamConstructor")
     public static void copiaFile(String sorgente, String destinazione) {
         File fileSorgente = new File(sorgente);
         File fileDestinazione = new File(destinazione);

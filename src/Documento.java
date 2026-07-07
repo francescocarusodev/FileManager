@@ -19,7 +19,7 @@ public class Documento implements Serializable {
     }
 
 
-
+    @SuppressWarnings("IOStreamConstructor")
     public void salvaSuFile(String nomeFile){
 
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nomeFile))){
@@ -31,7 +31,7 @@ public class Documento implements Serializable {
     }
 
 
-
+    @SuppressWarnings("IOStreamConstructor")
     public static Documento caricaDaFile(String nomeFile){
             try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nomeFile))){
                 return (Documento) ois.readObject();
