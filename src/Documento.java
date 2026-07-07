@@ -15,7 +15,7 @@ public class Documento implements Serializable {
     }
 
     public void stampaInfo(){
-        System.out.println("Info: \nTitolo:" + titolo + ", autore: " + autore + ", contenuto: " + contenuto);
+        System.out.println("Titolo:" + titolo + ", autore: " + autore + ", contenuto: " + contenuto);
     }
 
 
@@ -32,13 +32,12 @@ public class Documento implements Serializable {
 
 
 
-    public void caricaDaFile(String nomeFile){
+    public static Documento caricaDaFile(String nomeFile){
             try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nomeFile))){
-                Documento p2 = (Documento) ois.readObject();
-                System.out.println("Documento deserializzato con successo.");
-                p2.stampaInfo();
+                return (Documento) ois.readObject();
             } catch (IOException | ClassNotFoundException ex) {
                 System.out.println("Errore durante la deserializzazione: " + ex);
             }
+        return null;
     }
 }
