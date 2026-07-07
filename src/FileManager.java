@@ -14,8 +14,11 @@ public class FileManager {
         }
     }
 
-
-
+    @Deprecated //il metodo è deprecato, si consiglia fortemente l'uso di leggiDaFile
+    public static void stampaFile(String pathFile){
+        File file = new File(pathFile);
+        System.out.println(file);
+    }
 
     public static void leggiDaFile(String pathFile) {
         File file = new File(pathFile);
